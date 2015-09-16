@@ -4,13 +4,28 @@
 <head>
     <title>Numeric Sequence Calculator</title>
 </head>
-<body ng-controller="Main as vm">
+<body>
 
     TODO instructions
 
-    <input type="text" ng-model="vm.number" placeholder="Enter number" />
-
-    <p>Current number is {{vm.number}}</p>
+    <form name="myForm" ng-controller="Main as vm">
+        <label>
+            Number:
+            <input type="number" name="input" ng-model="vm.number"
+                   min="1" integer required>
+        </label>
+        <div role="alert">
+            <span class="error" ng-show="myForm.input.$error.required">
+                Please enter a number to proceed.
+            </span>
+            <span class="error" ng-show="myForm.input.$error.number">
+                Not a valid number, please enter a number to proceed.
+            </span>
+            <span class="error" ng-show="myForm.input.$error.min">
+                Number entered must be positive.
+            </span>
+        </div>
+    </form>
 
     <script src="Scripts/angular.min.js"></script>
     <script src="app/app.module.js"></script>
