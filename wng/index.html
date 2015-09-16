@@ -1,12 +1,20 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html ng-app="app">
 <head>
     <title>Numeric Sequence Calculator</title>
 </head>
-<body>
+<body ng-controller="Main as vm">
 
     TODO instructions
+
+    <input type="text" ng-model="vm.number" placeholder="Enter number" />
+
+    <p>Current number is {{vm.number}}</p>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.js"></script>
 
 </body>
 </html>
