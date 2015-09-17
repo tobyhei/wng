@@ -3,49 +3,54 @@
 <html ng-app="app">
 <head>
     <title>Numeric Sequence Calculator</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <form name="myForm" ng-controller="Main as vm">
-        <div ng-show="!myForm.$submitted">
-            <label>
-                TODO instructions
-
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Numeric Sequence Calculator</h1>
+        </div>
+        <form name="myForm" ng-controller="Main as vm">
+            <div ng-show="!myForm.$submitted">
+                <h2>Instructions</h2>
+                <p>TODO</p>
                 Number:
                 <input type="number" name="input" ng-model="vm.number"
-                       min="1" integer required>
-            </label>
-            <button>
-                Calculate results
-            </button>
-        </div>
-        <div ng-show="myForm.$submitted" role="alert">
-            <span class="error" ng-show="myForm.input.$error.required">
-                Please enter a number to proceed.
-            </span>
-            <span class="error" ng-show="myForm.input.$error.number">
-                Not a valid number, please enter a number to proceed.
-            </span>
-            <span class="error" ng-show="myForm.input.$error.min">
-                Number entered must be positive.
-            </span>
-            <span class="error" ng-show="myForm.input.$error.integer">
-                Number entered must be an integer.
-            </span>
-        </div>
-        <div class="listResults" ng-show="myForm.$submitted">
-            <p>Number entered: {{vm.number}}</p>
-            <p>All numbers up to and including the number entered: {{vm.all()}}</p>
-            <p>All odd numbers up to and including the number entered: {{vm.odd()}}</p>
-            <p>All even numbers up to and including the number entered: {{vm.even()}}</p>
-            <p>FizzBuzz numbers: {{vm.fizzBuzz()}}</p>
-            <p>All fibonacci numbers up to and including the number entered:{{vm.fibonacci()}}</p>
-           
-        </div>
-    </form>
+                    min="1" integer required>
+                <button class="btn btn-default">
+                    Calculate results
+                </button>
+            </div>
+            <div ng-show="myForm.$submitted" role="alert">
+                <span class="error" ng-show="myForm.input.$error.required">
+                    Please enter a number to proceed.
+                </span>
+                <span class="error" ng-show="myForm.input.$error.number">
+                    Not a valid number, please enter a number to proceed.
+                </span>
+                <span class="error" ng-show="myForm.input.$error.min">
+                    Number entered must be positive.
+                </span>
+                <span class="error" ng-show="myForm.input.$error.integer">
+                    Number entered must be an integer.
+                </span>
+            </div>
+            <div ng-show="myForm.$submitted">
+                <p>Number entered: {{vm.number}}</p>
+                <p>All numbers up to and including the number entered: {{vm.all()}}</p>
+                <p>All odd numbers up to and including the number entered: {{vm.odd()}}</p>
+                <p>All even numbers up to and including the number entered: {{vm.even()}}</p>
+                <p>FizzBuzz numbers: {{vm.fizzBuzz()}}</p>
+                <p>All fibonacci numbers up to and including the number entered:{{vm.fibonacci()}}</p>
 
-    <script src="Scripts/angular.min.js"></script>
-    <script src="app/app.module.js"></script>
-    <script src="app/main.js"></script>
+            </div>
+        </form>
 
+        <script src="Scripts/jquery-1.9.1.js"></script>
+        <script src="Scripts/bootstrap.js"></script>
+        <script src="Scripts/angular.min.js"></script>
+        <script src="app/app.module.js"></script>
+        <script src="app/main.js"></script>
+    </div>
 </body>
 </html>
