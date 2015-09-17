@@ -13,7 +13,21 @@
         <form name="myForm" ng-controller="Main as vm">
             <div ng-show="!myForm.$submitted">
                 <h2>Instructions</h2>
-                <p>TODO</p>
+                <p>Please enter a positive integer, Then click the "Calculate results" button.
+                    <br>This will result in the following information being displayed:
+                    <ol>
+                        <li>All numbers up to and including the number entered</li>
+                        <li>All odd numbers up to and including the number entered</li>
+                        <li>All even numbers up to and including the number entered</li>
+                        <li>All numbers up to and including the number entered, except when:</li>
+                        <ul>
+                            <li> A number is a multiple of 3 display C instead</li>
+                            <li> A number is a multiple of 5 display E instead</li>
+                            <li> A number is a multiple of both 3 and 5 display Z instead</li>
+                        </ul>
+                        <li>All fibonacci number up to and including the number entered.</li>                        
+                    </ol>
+                </p>
                 Number:
                 <input type="number" name="input" ng-model="vm.number"
                     min="1" integer required>
