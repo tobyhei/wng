@@ -14,7 +14,7 @@
             <input type="number" name="input" ng-model="vm.number"
                    min="1" integer required>
         </label>
-        <div role="alert">
+        <div ng-show="myForm.$submitted" role="alert">
             <span class="error" ng-show="myForm.input.$error.required">
                 Please enter a number to proceed.
             </span>
@@ -23,6 +23,9 @@
             </span>
             <span class="error" ng-show="myForm.input.$error.min">
                 Number entered must be positive.
+            </span>
+            <span class="error" ng-show="myForm.input.$error.integer">
+                Number entered must be an integer.
             </span>
         </div>
     </form>
